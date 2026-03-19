@@ -5,10 +5,7 @@
   <meta name="viewport" content="initial-scale=1, width=device-width" />
 
   <meta property="og:title" content="나무 Today I Learn" />
-  <meta
-          property="og:description"
-          content="나무의 자기소개 페이지입니다."
-  />
+  <meta property="og:description" content="나무의 자기소개 페이지입니다." />
   <meta property="og:image" content="./images/thumbnail.jpg" />
 
   <title>나무 | Today I Learn</title>
@@ -16,7 +13,6 @@
   <script src="./js/index.js" defer></script>
 </head>
 <body>
-<!-- 상단 내비게이션 -->
 <header>
   <nav class="top-nav">
     <span class="nav-logo">My Page</span>
@@ -31,11 +27,9 @@
 </header>
 
 <main>
-  <!-- 프로필 히어로 -->
   <section class="hero" id="about">
     <div class="profile-card">
       <div class="profile-image">
-        <!-- TODO: 프로필 이미지 -->
         <img src="./images/profile.jpg" alt="나무 프로필 사진" />
       </div>
       <div class="profile-info">
@@ -47,9 +41,7 @@
 
   <section class="content-section" id="intro">
     <h2>자기소개</h2>
-    <p>
-      안녕하세요. 뿌리를 깊이 내리며 성장하고 싶은 나무입니다.
-    </p>
+    <p>안녕하세요. 뿌리를 깊이 내리며 성장하고 싶은 나무입니다.</p>
     <a
             class="github-link"
             href="https://github.com/symflee"
@@ -89,15 +81,15 @@
     <h2>나만의 갤러리</h2>
     <p class="section-desc">9종류의 나무</p>
     <div class="gallery-grid">
-      <img src="./images/namu1.jpg" alt="갤러리 이미지 1" />
-      <img src="./images/namu2.jpg" alt="갤러리 이미지 2" />
-      <img src="./images/namu3.jpeg" alt="갤러리 이미지 3" />
-      <img src="./images/namu4.jpg" alt="갤러리 이미지 4" />
-      <img src="./images/namu5.jpg" alt="갤러리 이미지 5" />
-      <img src="./images/namu6.jpg" alt="갤러리 이미지 6" />
-      <img src="./images/namu7.jpg" alt="갤러리 이미지 7" />
-      <img src="./images/namu8.jpg" alt="갤러리 이미지 8" />
-      <img src="./images/namu9.png" alt="갤러리 이미지 9" />
+      <img src="./images/namu1.jpg" alt="나무 사진 1" />
+      <img src="./images/namu2.jpg" alt="나무 사진 2" />
+      <img src="./images/namu3.jpeg" alt="나무 사진 3" />
+      <img src="./images/namu4.jpg" alt="나무 사진 4" />
+      <img src="./images/namu5.jpg" alt="나무 사진 5" />
+      <img src="./images/namu6.jpg" alt="나무 사진 6" />
+      <img src="./images/namu7.jpg" alt="나무 사진 7" />
+      <img src="./images/namu8.jpg" alt="나무 사진 8" />
+      <img src="./images/namu9.png" alt="나무 사진 9" />
     </div>
   </section>
 
@@ -141,7 +133,7 @@
       </li>
 
       <li class="works-item">
-        <article class="work-card">
+        <article class="work-card work-card-video">
           <div class="work-info">
             <h3>[10분 테코톡] ☂️ 검프의 Docker #이론편</h3>
             <p>
@@ -171,6 +163,7 @@
         <label for="til-date">날짜</label>
         <input type="date" id="til-date" name="date" required />
       </div>
+
       <div class="form-group">
         <label for="til-title">제목</label>
         <input
@@ -181,6 +174,7 @@
                 required
         />
       </div>
+
       <div class="form-group">
         <label for="til-content">내용</label>
         <textarea
@@ -190,6 +184,7 @@
                 required
         ></textarea>
       </div>
+
       <div class="form-actions">
         <button type="submit">등록</button>
         <button type="reset">초기화</button>

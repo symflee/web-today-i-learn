@@ -1,52 +1,74 @@
-@import "./reset.css";
-@import "./common.css";
-@import "./wiki-layout.css";
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.5;
-  background-color: #f5f7f2;
+  background-color: #ececec;
   color: #1f2937;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
 }
 
 header {
   position: sticky;
   top: 0;
+  z-index: 100;
   background-color: #ffffff;
-  border-bottom: 1px solid #d1d5db;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .top-nav {
-  width: min(1100px, 100% - 32px);
+  width: min(1100px, calc(100% - 32px));
   margin: 0 auto;
   padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .nav-logo {
   font-size: 20px;
   font-weight: 700;
+  color: #111827;
 }
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
+  margin: 0;
   padding: 0;
-  margin: 12px 0 0;
   list-style: none;
 }
 
 .nav-links a {
-  color: #1f2937;
   text-decoration: none;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
 }
 
 main {
-  width: min(1100px, 100% - 32px);
-  margin: 0 auto;
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto 40px;
 }
 
 .hero {
@@ -54,44 +76,77 @@ main {
 }
 
 .profile-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 36px 40px;
   display: flex;
-  gap: 24px;
   align-items: center;
-  padding: 24px;
+  gap: 40px;
+  background-color: #f8f8f8;
+  border-radius: 32px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.profile-image {
+  width: 300px;
+  height: 380px;
+  flex-shrink: 0;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #ffffff;
-  border-radius: 16px;
+  border-radius: 28px;
+  box-shadow: inset 0 0 0 1px #e5e7eb;
 }
 
 .profile-image img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
 }
 
 .profile-info h1 {
-  margin: 0 0 8px;
+  margin: 0;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1f2937;
 }
 
 .tagline {
   margin: 0;
-  font-size: 18px;
-  color: #4b5563;
+  font-size: 40px;
+  letter-spacing: 8px;
+  color: #6b7280;
 }
 
 .content-section {
   margin: 24px 0;
   padding: 24px;
   background-color: #ffffff;
-  border-radius: 16px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
 }
 
 .content-section h2 {
-  margin-top: 0;
+  margin: 0 0 16px;
+  font-size: 28px;
+  color: #111827;
 }
 
 .section-desc {
+  margin: 0 0 16px;
   color: #6b7280;
 }
 
@@ -100,6 +155,11 @@ main {
   margin-top: 12px;
   color: #2563eb;
   text-decoration: none;
+  font-weight: 600;
+}
+
+.github-link:hover {
+  text-decoration: underline;
 }
 
 .info-table {
@@ -115,9 +175,14 @@ main {
   vertical-align: top;
 }
 
-#gallery .gallery-grid {
+.info-table th {
+  width: 140px;
+  background-color: #f9fafb;
+}
+
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -125,39 +190,61 @@ main {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  display: block;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .works-list {
-  padding-left: 20px;
+  display: grid;
+  gap: 24px;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.works-item + .works-item {
-  margin-top: 24px;
+.works-item {
+  margin: 0;
 }
 
 .work-card {
   display: flex;
-  gap: 20px;
   align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.work-card-video {
+  display: block;
+}
+
+.work-thumbnail {
+  width: 220px;
+  flex-shrink: 0;
 }
 
 .work-thumbnail img {
-  width: 220px;
+  width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  display: block;
   border-radius: 12px;
 }
 
 .work-info {
   flex: 1;
+  min-width: 0;
 }
 
 .work-info h3 {
-  margin-top: 0;
+  margin: 0 0 12px;
+  font-size: 24px;
+  color: #111827;
+}
+
+.work-info p {
+  margin: 0;
+  color: #374151;
 }
 
 .work-video {
@@ -166,8 +253,9 @@ main {
 
 .work-video iframe {
   width: 100%;
-  max-width: 560px;
+  max-width: 720px;
   aspect-ratio: 16 / 9;
+  display: block;
   border: 0;
   border-radius: 12px;
 }
@@ -188,7 +276,7 @@ main {
   width: 100%;
   padding: 12px;
   border: 1px solid #d1d5db;
-  border-radius: 8px;
+  border-radius: 10px;
   font: inherit;
 }
 
@@ -205,8 +293,19 @@ main {
 .form-actions button {
   padding: 10px 16px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
+  font: inherit;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+.form-actions button[type="reset"] {
+  background-color: #e5e7eb;
+  color: #1f2937;
 }
 
 .til-list {
@@ -222,39 +321,79 @@ main {
   background-color: #f9fafb;
 }
 
+.til-item time {
+  display: block;
+  margin-bottom: 8px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.til-item h3 {
+  margin: 0 0 8px;
+}
+
+.til-item p {
+  margin: 0;
+}
+
 footer {
-  width: min(1100px, 100% - 32px);
-  margin: 32px auto;
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto 32px;
   text-align: center;
   color: #6b7280;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .profile-card {
     flex-direction: column;
     text-align: center;
+    padding: 32px 24px;
   }
 
-  #gallery .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .profile-image {
+    width: 260px;
+    height: 320px;
+  }
+
+  .profile-info h1 {
+    font-size: 52px;
+  }
+
+  .tagline {
+    font-size: 28px;
+    letter-spacing: 6px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .work-card {
     flex-direction: column;
   }
 
-  .work-thumbnail img {
+  .work-thumbnail {
     width: 100%;
     max-width: 280px;
   }
 }
 
-@media (max-width: 480px) {
-  #gallery .gallery-grid {
+@media (max-width: 600px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 
-  .nav-links {
-    flex-wrap: wrap;
+  .profile-info h1 {
+    font-size: 40px;
+  }
+
+  .tagline {
+    font-size: 22px;
+    letter-spacing: 4px;
   }
 }
